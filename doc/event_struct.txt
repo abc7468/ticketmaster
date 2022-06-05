@@ -1,0 +1,22 @@
+예시 JSON 형태
+
+{
+    name : "",
+    startdate: 123,
+    enddate: 123,
+    duration: 123, //분으로 나타낸 시간
+    location{
+        id: "",
+        name: "",
+        address: "",
+        country: "",
+        opentime: 1,
+        closetime: 2,
+        Hall:{
+            name : "",
+            location: "",
+            capacity: 10
+        }
+    }
+}
+
