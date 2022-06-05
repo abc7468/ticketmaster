@@ -1,4 +1,4 @@
-package event
+package rest
 
 import (
 	"github.com/gorilla/mux"
