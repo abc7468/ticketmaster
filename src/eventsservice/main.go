@@ -18,5 +18,11 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
-	log.Fatal(rest.ServeAPI(config.RestfulEndpoint, dbhandler))
+	httpErr, httpsErr := rest.ServeAPI(config.RestfulEndpoint, config.RestfulTLSEndpoint, dbhandler)
+	select {
+	case err := <-httpErr:
+		log.Fatal(err)
+	case err := <-httpsErr:
+		log.Fatal(err)
+	}
 }
